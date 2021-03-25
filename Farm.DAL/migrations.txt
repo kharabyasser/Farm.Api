@@ -1,0 +1,2 @@
+﻿dotnet ef migrations add InitialCreate --context FarmDbContext --project Farm.DAL
+dotnet ef database update --context FarmDbContext --project Farm.DAL
