@@ -44,16 +44,16 @@ namespace Farm.Api.Data.Seeders
 
         public Task Relate()
         {
-            //var relatorEntities = RelatorService.GetAll().ToList();
+            var relatorEntities = RelatorService.GetAll().ToList();
 
-            //foreach (var entity in relatorEntities)
-            //{
-            //    entity.Farmers = Entities.Value.ToList();
+            foreach (var entity in relatorEntities)
+            {
+                entity.Farmers = Entities.Value.ToList();
 
-            //    var result = RelatorService.Update(entity.Id, entity);
-            //}
+                var result = RelatorService.Update(entity.Id, entity);
+            }
 
-            //SaveChanges();
+            SaveChanges();
 
             return Task.CompletedTask;
         }

@@ -44,33 +44,33 @@ namespace Farm.Api.Data.Seeders
 
         public Task Relate()
         {
-            //var relatorEntities = RelatorService.GetAll().ToList();
+            var relatorEntities = RelatorService.GetAll().ToList();
 
-            //foreach (var entity in relatorEntities)
-            //{
-            //    entity.EquipmentFarmland = new List<EquipmentFarmland> 
-            //    { 
-            //        new EquipmentFarmland
-            //        {
-            //            EquipmentPk = Entities.Value.FirstOrDefault().Pk,
-            //            FarmlandPk = entity.Pk,
-            //            Equipment = Entities.Value.FirstOrDefault(),
-            //            Farmland = entity,
-            //            OwnerShipType = OwnershipType.Own
-            //        },
+            foreach (var entity in relatorEntities)
+            {
+                entity.EquipmentFarmlands = new List<EquipmentFarmland>
+                {
+                    new EquipmentFarmland
+                    {
+                        EquipmentId = Entities.Value.FirstOrDefault().Id,
+                        FarmlandId = entity.Id,
+                        Equipment = Entities.Value.FirstOrDefault(),
+                        Farmland = entity,
+                        OwnerShipType = OwnershipType.Own
+                    },
 
-            //        new EquipmentFarmland
-            //        {
-            //            EquipmentPk = Entities.Value.LastOrDefault().Pk,
-            //            FarmlandPk = entity.Pk,
-            //            Equipment = Entities.Value.LastOrDefault(),
-            //            Farmland = entity,
-            //            OwnerShipType = OwnershipType.Rent
-            //        }
-            //    };
+                    new EquipmentFarmland
+                    {
+                        EquipmentId = Entities.Value.LastOrDefault().Id,
+                        FarmlandId = entity.Id,
+                        Equipment = Entities.Value.LastOrDefault(),
+                        Farmland = entity,
+                        OwnerShipType = OwnershipType.Rent
+                    }
+                };
 
-            //    RelatorService.Update(entity.Pk, entity);
-            //}
+                RelatorService.Update(entity.Id, entity);
+            }
 
             return Task.CompletedTask;
         }

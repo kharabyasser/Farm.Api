@@ -22,7 +22,7 @@ namespace Farm.Api
 
             services.AddControllers().AddNewtonsoftJson(options =>
             {
-                // Uncomment to disable navigation properties.
+                // Uncomment to disable navigation properties or use OData.
                 //options.SerializerSettings.ContractResolver = new JsonCustomResolver();
                 options.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.None;
                 options.SerializerSettings.Formatting = Formatting.Indented;

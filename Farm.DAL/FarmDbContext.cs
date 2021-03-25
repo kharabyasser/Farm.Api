@@ -4,6 +4,7 @@ using Farm.DAL.Interfaces;
 
 namespace Farm.DAL
 {
+    // No need to run migrations on in memory db, migrations commands can be found on //Farm.DAL/migrations.txt
     public class FarmDbContext : DbContext, IFarmDbContext
     {
         public FarmDbContext(DbContextOptions<FarmDbContext> options) : base(options) { }

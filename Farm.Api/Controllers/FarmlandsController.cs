@@ -21,6 +21,13 @@ namespace Farm.Api.Controllers
             _usersService = usersService;
         }
 
+        /// <summary>
+        /// Assign Equipemt to Faramland.
+        /// </summary>
+        /// <param name="farmlandPk"></param>
+        /// <param name="equipmentPk"></param>
+        /// <param name="relation"></param>
+        /// <returns></returns>
         [Route("/api/farmlands/assignEquipment/{farmlandPk}/{equipmentPk}/{relation}")]
         [HttpPost]
         public ActionResult<Farmland> AssignEquipment(Guid farmlandPk, Guid equipmentPk, string relation)
@@ -57,6 +64,12 @@ namespace Farm.Api.Controllers
             return new OkResult();
         }
 
+        /// <summary>
+        /// Assign a User to Farmland.
+        /// </summary>
+        /// <param name="farmlandPk"></param>
+        /// <param name="userPk"></param>
+        /// <returns></returns>
         [Route("/api/farmlands/assignUser/{farmlandPk}/{userPk}")]
         [HttpPost]
         public ActionResult<Farmland> AssignUser(Guid farmlandPk, Guid userPk)
@@ -84,6 +97,11 @@ namespace Farm.Api.Controllers
             return new OkResult();
         }
 
+        /// <summary>
+        /// Get Farmlands by user.
+        /// </summary>
+        /// <param name="userPk"></param>
+        /// <returns></returns>
         [Route("/api/farmlands/{userPk}")]
         [HttpGet]
         public ActionResult<IEnumerable<Farmland>> GetFarmsByUser(Guid userPk)

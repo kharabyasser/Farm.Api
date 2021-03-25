@@ -37,9 +37,10 @@ namespace Farm.Api.Configuration
             await serviceSeeder.Seed();
         }
 
+        // Uncomment to seed relations.
         private static async Task Relate(ISeeder serviceSeeder)
         {
-            await serviceSeeder.Relate();
+            //await serviceSeeder.Relate();
         }
     }
 }

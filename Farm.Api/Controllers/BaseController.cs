@@ -21,7 +21,7 @@ namespace Farm.Api.Controllers
         [HttpGet]
         public virtual ActionResult<IQueryable<T>> Get() => new ObjectResult(_entityService.GetAll());
 
-        // PUT: api/Entities/{id}
+        // PUT: api/Controller/Entities/{id}
         [HttpPut]
         public IActionResult Put(Guid id, T entity)
         {
@@ -30,7 +30,7 @@ namespace Farm.Api.Controllers
             return new OkResult();
         }
 
-        // POST: api/Entities/
+        // POST: api/Controller/Entities
         [HttpPost]
         public async Task<ActionResult<T>> Post(T entity)
         {
@@ -39,7 +39,7 @@ namespace Farm.Api.Controllers
             return new OkResult();
         }
 
-        // DELETE: api/Entities/{id}
+        // DELETE: api/Controller/Entities/{id}
         [HttpDelete]
         public async Task<ActionResult<T>> Delete(Guid id)
         {
